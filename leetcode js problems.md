@@ -176,7 +176,7 @@ var reduce = function(nums, fn, init) {
 };
 ```
 
-### 06]. 2629. Function Composition
+### 08]. 2629. Function Composition
 **Given an array of functions [f1, f2, f3, ..., fn], return a new function fn that is the function composition of the array of functions.**
 **The function composition of [f(x), g(x), h(x)] is fn(x) = f(g(h(x))).**
 **The function composition of an empty list of functions is the identity function f(x) = x.**
@@ -210,7 +210,7 @@ var compose = function(functions) {
  */
 ```
 
-### 07]. 2703. Return Length of Arguments Passed
+### 09]. 2703. Return Length of Arguments Passed
 
 **Write a function argumentsLength that returns the count of arguments passed to it.**
 **Input: args = [5]
