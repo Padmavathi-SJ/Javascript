@@ -230,5 +230,70 @@ var argumentsLength = function(...args) {
  */
 ```
 
-###
- 
+### 10]. 2666. Allow One Function Call
+
+**Given a function fn, return a new function that is identical to the original function except that it ensures fn is called at most once.
+The first time the returned function is called, it should return the same result as fn.
+Every subsequent time it is called, it should return undefined.**
+
+ ```
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+var once = function (fn) {
+    let counter = 0
+    return function (...args) {
+        counter++
+        if (counter === 1) return fn(...args)
+    }
+};
+
+/**
+ * let fn = (a,b,c) => (a + b + c)
+ * let onceFn = once(fn)
+ *
+ * onceFn(1,2,3); // 6
+ * onceFn(2,3,6); // returns undefined without calling fn
+ */
+```
+
+### 11]. 2623. Memoize
+**Given a function fn, return a memoized version of that function.
+A memoized function is a function that will never be called twice with the same inputs. Instead it will return a cached value.
+You can assume there are 3 possible input functions: sum, fib, and factorial.
+sum accepts two integers a and b and returns a + b. Assume that if a value has already been cached for the arguments (b, a) where a != b, it cannot be used for the arguments (a, b). For example, if the arguments are (3, 2) and (2, 3), two separate calls should be made.
+fib accepts a single integer n and returns 1 if n <= 1 or fib(n - 1) + fib(n - 2) otherwise.
+factorial accepts a single integer n and returns 1 if n <= 1 or factorial(n - 1) * n otherwise.**
+
+```
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+function memoize(fn) {
+ const map = new Map();
+    return function(...args) {
+        if(!map.has(JSON.stringify(args))){
+            const b = fn(...args);
+            map.set(JSON.stringify(args), b);
+            return b;
+        }
+        else{
+            return map.get(JSON.stringify(args));
+        }
+    }
+}
+
+
+/** 
+ * let callCount = 0;
+ * const memoizedFn = memoize(function (a, b) {
+ *	 callCount += 1;
+ *   return a + b;
+ * })
+ * memoizedFn(2, 3) // 5
+ * memoizedFn(2, 3) // 5
+ * console.log(callCount) // 1 
+ */
+```
