@@ -298,7 +298,7 @@ function memoize(fn) {
  */
 ```
 
-### [12]. 2723. Add Two Promises
+### 12]. 2723. Add Two Promises
 
 **Given two promises promise1 and promise2, return a new promise. promise1 and promise2 will both resolve with a number. The returned promise should resolve with the sum of the two numbers.**
 
@@ -307,4 +307,20 @@ var addTwoPromises = async function (promise1, promise2) {
     const [value1, value2] = await Promise.all([promise1, promise2]);
     return value1 + value2;
 };
+```
+
+### 13]. 
+
+```
+/**
+ * @param {number} millis
+ */
+async function sleep(millis) {
+    await new Promise(resolve => setTimeout(resolve, millis));
+}
+
+/** 
+ * let t = Date.now()
+ * sleep(100).then(() => console.log(Date.now() - t)) // 100
+ */
 ```
