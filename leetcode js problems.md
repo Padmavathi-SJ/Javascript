@@ -309,7 +309,9 @@ var addTwoPromises = async function (promise1, promise2) {
 };
 ```
 
-### 13]. 
+### 13]. 2621. Sleep:
+
+**Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.**
 
 ```
 /**
