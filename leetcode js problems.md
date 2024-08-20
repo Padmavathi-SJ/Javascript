@@ -352,7 +352,9 @@ const cancellable = function(fn, args, t) {
   return cancelFn ;
 };
 ```
-###
+### [15]. Interval Calculation
+
+**
 
 ```
 /**
