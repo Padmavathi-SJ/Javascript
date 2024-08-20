@@ -327,7 +327,7 @@ async function sleep(millis) {
  */
 ```
 
-### 2715. Timeout Cancellation:
+### [14]. 2715. Timeout Cancellation:
 
 **Given a function fn, an array of arguments args, and a timeout t in milliseconds, return a cancel function cancelFn.
 After a delay of cancelTimeMs, the returned cancel function cancelFn will be invoked.
@@ -350,5 +350,22 @@ const cancellable = function(fn, args, t) {
       fn(...args)
   }, t);
   return cancelFn ;
+};
+```
+###
+
+```
+/**
+ * @param {Function} fn
+ * @param {Array} args
+ * @param {number} t
+ * @return {Function}
+ */
+var cancellable = function(fn, args, t) {
+     fn(...args);
+    let timer = setInterval(() => fn(...args), t);
+
+    let cancelFn = () => clearInterval(timer);
+    return cancelFn;
 };
 ```
