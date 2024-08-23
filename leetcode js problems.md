@@ -522,3 +522,16 @@ Array.prototype.last = function() {
  * arr.last(); // 3
  */
 ```
+
+###
+
+```
+/**
+ * @param {Array} arr
+ * @param {Function} fn
+ * @return {Array}
+ */
+var sortBy = function(arr, fn) {
+    return arr.sort((a, b) => fn(a) - fn(b));
+};
+```
