@@ -540,7 +540,7 @@ var sortBy = function(arr, fn) {
 ```
 
 
-###
+### 2627. Debounce
 ```
 /**
  * @param {Function} fn
