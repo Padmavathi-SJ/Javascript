@@ -598,7 +598,7 @@ var promiseAll = async function(functions) {
 };
 ```
 
-###
+### 2619. Array Prototype Last
 ```
 #include <stdio.h>
 
